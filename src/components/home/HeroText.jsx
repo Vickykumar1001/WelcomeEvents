@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { animationStart, reveal } from "../../utils/animation";
-import TagLineComponent from "../hero/Tagline";
+import TagLineComponent from "./Tagline";
 
 function HeroText() {
   return (
@@ -29,7 +29,7 @@ function HeroText() {
         initial="hiddenVariant"
         animate="revealedVariant"
         transition={{ delay: animationStart + 1, duration: 0.5 }}
-        className="flex flex-col text-2.3vw <md:text-24px font-bold mb-30px"
+        className="flex flex-col text-2vw <md:text-24px mb-30px"
       >
         <span className="flex items-center gap-10px">
           Bringing Your Events
@@ -43,7 +43,7 @@ function HeroText() {
         initial="hiddenVariant"
         animate="revealedVariant"
         transition={{ delay: animationStart + 1.2, duration: 0.5 }}
-        className="mb-30px w-1/4 <lg:w-1/3 <md:w-1/2 text-16px leading-tight pv-40px"
+        className="mb-40px w-1/2 text-20px  font-bold <lg:w-1/3 <md:w-1/2 leading-tight pt-40px mb-200px"
       >
         <TagLineComponent />
       </motion.span>

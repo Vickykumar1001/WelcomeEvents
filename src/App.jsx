@@ -1,4 +1,4 @@
-import Service from "./components/hero/Service";
+import About from "./components/about/About";
 import HeroText from "./components/home/HeroText";
 import Home from "./components/home/Home";
 import Navbar from "./components/navbar/Navbar";
@@ -9,12 +9,12 @@ function App() {
     <>
       <Navbar />
       <Home />
-      <HeroText />
-      <HeroText />
-      <HeroText />
-      <HeroText />
-      <Service />
 
+      <HeroText />
+
+      <HeroText />
+      <About />
+      <HeroText />
     </>
   )
 }

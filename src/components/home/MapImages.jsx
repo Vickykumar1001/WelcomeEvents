@@ -3,7 +3,7 @@ import { animationStart } from "../../utils/animation";
 
 function MapImages() {
   return (
-    <div className="absolute w-full flex justify-between transform -translate-y-200px -z-1 overflow-hidden">
+    <div className="absolute w-full flex justify-between transform -translate-y-220px -z-0 overflow-hidden pb-40px">
       <motion.img
         src="src/assets/borderL.png"
         initial={{ x: -100, opacity: 0 }}

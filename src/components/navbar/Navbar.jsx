@@ -45,10 +45,10 @@ function Navbar() {
                 </motion.div>
                 <div className="flex gap-20px items-center">
                     <motion.span variants={reveal} className="cursor-pointer">
-                        Home
+                        <a href="#home"> Home</a>
                     </motion.span>
                     <motion.span variants={reveal} className="cursor-pointer">
-                        About
+                        <a href="#about">About</a>
                     </motion.span>
                     <motion.span variants={reveal} className="cursor-pointer">
                         Services
@@ -62,7 +62,7 @@ function Navbar() {
                     className="flex gap-5px items-center cursor-pointer"
                 >
                     <span className="mb-3px">Contact Us</span>
-                    <ArrowRight />
+                    <ArrowRight className="animate-bounce" />
                 </motion.div>
             </motion.div>
         </motion.div>

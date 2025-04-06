@@ -5,20 +5,21 @@ const TagLineComponent = () => {
         <TypeAnimation
             sequence={[
                 'Your Dream, Our Theme.',
-                1000,
+                2000,
                 'Your Vision, Our Creation.',
-                1000,
+                2000,
                 'Your Moment, Our Commitment.',
-                1000,
+                2000,
                 'Your Vision, Our Production.',
-                1000,
+                2000,
                 'Your Celebration, Our Creation.',
-                1000,
+                2000,
                 'Your Spark, Our Fire.',
-                1000,
-                'Your Love, Our Lights.'
+                2000,
+                'Your Love, Our Lights.',
+                2000,
             ]}
-            speed={20}
+            speed={5}
             style={{ fontSize: '2em' }}
             repeat={Infinity}
         />

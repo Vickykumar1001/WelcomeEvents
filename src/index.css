@@ -7,6 +7,15 @@ body {
   color: azure;
 }
 
+#home {
+  background-image:
+    url("./assets/background.jpg"),
+    linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 0%);
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-blend-mode: soft-light;
+}
+
 .parisienne-regular {
   font-family: "Parisienne", cursive;
   font-weight: 800;

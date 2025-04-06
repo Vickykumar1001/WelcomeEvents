@@ -1,15 +1,15 @@
 import IntroVideo from "./IntroVideo";
 import HeroText from "./HeroText";
 import MapImages from "./MapImages";
-import TaglineComponent from "../hero/Tagline";
+import TaglineComponent from "./Tagline";
 
 function Home() {
   return (
-    <>
+    <div id="home">
       <HeroText />
       <MapImages />
       <IntroVideo />
-    </>
+    </div>
   );
 }
 

@@ -1,7 +1,7 @@
 function IntroVideo() {
     return (
         <video
-            className="h-100vh w-full object-cover animate-clip-from-top-animation"
+            className="h-100vh w-full object-cover animate-clip-from-top-animation "
             autoPlay
             muted
             loop
