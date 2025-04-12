@@ -1,4 +1,4 @@
-import About from "./components/about/About";
+import AboutUs from "./components/about/AboutUs";
 import HeroText from "./components/home/HeroText";
 import Home from "./components/home/Home";
 import Navbar from "./components/navbar/Navbar";
@@ -9,12 +9,7 @@ function App() {
     <>
       <Navbar />
       <Home />
-
-      <HeroText />
-
-      <HeroText />
-      <About />
-      <HeroText />
+      <AboutUs />
     </>
   )
 }
