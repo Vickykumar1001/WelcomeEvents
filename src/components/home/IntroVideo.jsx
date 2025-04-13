@@ -1,3 +1,4 @@
+import video from "../../assets/video.mp4"
 function IntroVideo() {
     return (
         <video
@@ -6,7 +7,7 @@ function IntroVideo() {
             muted
             loop
         >
-            <source src="src/assets/video.mp4" type="video/mp4" />
+            <source src={video} type="video/mp4" />
         </video>
     );
 }

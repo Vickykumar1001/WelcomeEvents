@@ -1,11 +1,13 @@
 import { motion } from "framer-motion";
 import { animationStart } from "../../utils/animation";
+import borderR from "../../assets/borderR.png"
+import borderL from "../../assets/borderL.png"
 
 function MapImages() {
   return (
     <div className="absolute w-full flex justify-between transform -translate-y-220px -z-0 overflow-hidden pb-40px">
       <motion.img
-        src="src/assets/borderL.png"
+        src={borderL}
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         style={{
@@ -21,7 +23,7 @@ function MapImages() {
         className="object-cover"
       />
       <motion.img
-        src="src/assets/borderR.png"
+        src={borderR}
         initial={{ x: 100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{

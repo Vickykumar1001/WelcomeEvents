@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { animationStart, reveal } from "../../utils/animation";
+import firecracker from '../../assets/images/firecracker.png';
+import wedding from '../../assets/images/wedding.png';
+import lighting from '../../assets/images/lighting.png';
 function AboutUs() {
   // For staggered animations
   const container = {
@@ -133,7 +136,7 @@ function AboutUs() {
                 transition={{ duration: 0.3 }}
               >
                 <img
-                  src="src/assets/images/firecracker.png"
+                  src={firecracker}
                   alt="Special effects showcase"
                   className="w-full h-full object-cover"
                 />
@@ -150,7 +153,7 @@ function AboutUs() {
                   y: mousePosition.y
                 }}
               ><img
-                  src="src/assets/images/wedding.png"
+                  src={wedding}
                   alt="Wedding event production"
                   className="w-full h-full object-cover"
                 />
@@ -168,7 +171,7 @@ function AboutUs() {
                 }}
               >
                 <img
-                  src="src/assets/images/lighting.png"
+                  src={lighting}
                   alt="Lighting design"
                   className="w-full h-full object-cover"
                 />

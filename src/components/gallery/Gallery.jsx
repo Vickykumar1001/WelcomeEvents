@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { animationStart, reveal } from "../../utils/animation";
-
+import firecracker from '../../assets/images/firecracker.png';
+import wedding from '../../assets/images/wedding.png';
+import lighting from '../../assets/images/lighting.png';
 function GallerySection() {
     const [activeTab, setActiveTab] = useState("videos");
     const [selectedImage, setSelectedImage] = useState(null);
@@ -82,21 +84,21 @@ function GallerySection() {
     // Sample image data - replace with your actual image paths
     // For a real implementation, consider using multiple image sizes for responsive loading
     const images = [
-        { id: "img1", src: "src/assets/images/lighting.png", alt: "Wedding stage lighting" },
-        { id: "img2", src: "src/assets/images/firecracker.png", alt: "Corporate event setup" },
-        { id: "img3", src: "src/assets/images/wedding.png", alt: "Special effects display" },
-        { id: "img4", src: "src/assets/images/wedding.png", alt: "Bride entry concept" },
-        { id: "img5", src: "src/assets/images/wedding.png", alt: "Wedding lighting" },
-        { id: "img6", src: "src/assets/images/wedding.png", alt: "CO2 and fog effects" },
-        { id: "img7", src: "src/assets/images/wedding.png", alt: "Stage design" },
-        // { id: "img8", src: "src/assets/images/gallery-8.jpg", alt: "Confetti moment" },
-        // { id: "img9", src: "src/assets/images/gallery-9.jpg", alt: "Electronic fireworks" },
-        // { id: "img10", src: "src/assets/images/gallery-10.jpg", alt: "Sound setup" },
-        // { id: "img11", src: "src/assets/images/gallery-11.jpg", alt: "Lighting effects" },
-        // { id: "img12", src: "src/assets/images/gallery-12.jpg", alt: "Varmala ceremony" },
-        // { id: "img13", src: "src/assets/images/gallery-13.jpg", alt: "Wedding decor" },
-        // { id: "img14", src: "src/assets/images/gallery-14.jpg", alt: "Dance floor lighting" },
-        // { id: "img15", src: "src/assets/images/gallery-15.jpg", alt: "Grand entry effect" },
+        { id: "1", src: lighting, alt: "Wedding stage lighting" },
+        { id: "2", src: firecracker, alt: "Corporate event setup" },
+        { id: "3", src: wedding, alt: "Special effects display" },
+        { id: "4", src: wedding, alt: "Bride entry concept" },
+        { id: "5", src: wedding, alt: "Wedding lighting" },
+        { id: "6", src: wedding, alt: "CO2 and fog effects" },
+        { id: "7", src: wedding, alt: "Stage design" },
+        // { id: "8", src: "src/assets/images/gallery-8.jpg", alt: "Confetti moment" },
+        // { id: "9", src: "src/assets/images/gallery-9.jpg", alt: "Electronic fireworks" },
+        // { id: "10", src: "src/assets/images/gallery-10.jpg", alt: "Sound setup" },
+        // { id: "11", src: "src/assets/images/gallery-11.jpg", alt: "Lighting effects" },
+        // { id: "12", src: "src/assets/images/gallery-12.jpg", alt: "Varmala ceremony" },
+        // { id: "13", src: "src/assets/images/gallery-13.jpg", alt: "Wedding decor" },
+        // { id: "14", src: "src/assets/images/gallery-14.jpg", alt: "Dance floor lighting" },
+        // { id: "15", src: "src/assets/images/gallery-15.jpg", alt: "Grand entry effect" },
     ];
 
     // Create array of columns for masonry layout
