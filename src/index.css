@@ -7,20 +7,6 @@ body {
   color: azure;
 }
 
-#home {
-  background-image:
-    url("./assets/background2.jpg"),
-    linear-gradient(to top, rgba(0, 0, 0, 0.666), rgba(0, 0, 0, 0.66));
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-blend-mode: overlay;
-  position: relative;
-  min-height: 100vh;
-  width: 100%;
-  overflow: hidden;
-}
 
 .parisienne-regular {
   font-family: "Parisienne", cursive;

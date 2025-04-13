@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <Navbar />
-      {/* <Home /> */}
+      <Home />
       <AboutUs />
       <ServicesSection />
       <GallerySection />
