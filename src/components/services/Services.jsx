@@ -1,10 +1,9 @@
 import { motion } from "framer-motion";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { animationStart, reveal } from "../../utils/animation";
 import firecracker from "../../assets/images/firecracker.png"
 function ServicesSection() {
     const [hoveredService, setHoveredService] = useState(null);
-    const constraintsRef = useRef(null);
 
     // Animation variants
     const containerVariants = {
@@ -235,7 +234,6 @@ function ServicesSection() {
 
                     {/* Services grid with animations and images - responsive layout */}
                     <motion.div
-                        ref={constraintsRef}
                         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
                         variants={containerVariants}
                         initial="hidden"
@@ -247,9 +245,7 @@ function ServicesSection() {
                                 key={service.id}
                                 layoutId={service.id}
                                 variants={itemVariants}
-                                className={`bg-gray-900 bg-opacity-80 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-800 ${hoveredService === service.id
-                                    ? "shadow-xl shadow-amber-600/10"
-                                    : ""
+                                className={`bg-gray-900 bg-opacity-80 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-800 ${hoveredService === service.id ? "shadow-xl shadow-amber-600/10" : ""
                                     }`}
                                 onMouseEnter={() => setHoveredService(service.id)}
                                 onMouseLeave={() => setHoveredService(null)}
@@ -257,10 +253,6 @@ function ServicesSection() {
                                     y: -10,
                                     transition: { duration: 0.3 }
                                 }}
-                                drag
-                                dragConstraints={constraintsRef}
-                                dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
-                                dragElastic={0.05}
                             >
                                 {/* Service image - increased height */}
                                 <div className="h-56 overflow-hidden">
