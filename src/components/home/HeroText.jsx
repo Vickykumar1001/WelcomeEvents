@@ -19,7 +19,7 @@ function HeroText() {
         className="absolute rounded-full w-64 h-64 bg-amber-600/20 blur-3xl -z-10"
         initial={{ opacity: 0 }}
         animate={{
-          opacity: 0.6,
+          opacity: 0.7,
           scale: [1, 1.2, 1],
           x: [0, 30, 0],
           y: [0, -30, 0],

@@ -9,11 +9,17 @@ body {
 
 #home {
   background-image:
-    url("./assets/background.jpg"),
-    linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 0%);
-  background-size: auto;
+    url("./assets/background2.jpg"),
+    linear-gradient(to top, rgba(0, 0, 0, 0.666), rgba(0, 0, 0, 0.66));
+  background-position: center center;
+  background-size: cover;
   background-repeat: no-repeat;
-  background-blend-mode: soft-light;
+  background-attachment: fixed;
+  background-blend-mode: overlay;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
 }
 
 .parisienne-regular {
