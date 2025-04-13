@@ -25,8 +25,17 @@ function Navbar() {
         { name: "About", href: "#about" },
         { name: "Services", href: "#services" },
         { name: "Gallery", href: "#gallery" },
-        { name: "Testimonials", href: "#testimonials" },
+        // { name: "Testimonials", href: "#testimonials" },
     ];
+    const scrollTo = (sectionName) => {
+        const section = document.getElementById(sectionName);
+        if (section) {
+            setTimeout(() => {
+                section.scrollIntoView({ behavior: "smooth" });
+            }, 100);
+        }
+    };
+
 
     return (
         <motion.div
@@ -59,7 +68,7 @@ function Navbar() {
                             whileHover={{ scale: 1.05 }}
                             transition={{ duration: 0.2 }}
                         >
-                            <Logo />
+                            <Logo scrollTo={scrollTo} />
                         </motion.div>
 
                         {/* Desktop Navigation */}
@@ -68,6 +77,10 @@ function Navbar() {
                                 <motion.a
                                     key={index}
                                     href={item.href}
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        scrollTo(item.href.slice(1))
+                                    }}
                                     variants={reveal}
                                     className="text-gray-200 hover:text-amber-400 px-3 py-1 text-md font-medium relative transition-all duration-300"
                                     whileHover={{
@@ -94,6 +107,9 @@ function Navbar() {
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.98 }}
                                 className="bg-gradient-to-r from-amber-600 to-amber-500 text-white px-6 py-1 rounded-lg font-medium shadow-lg shadow-amber-600/20 flex items-center space-x-2 hover:shadow-amber-600/40 transition-all duration-300"
+                                onClick={() => {
+                                    scrollTo("contact")
+                                }}
                             >
                                 <span>Contact Us</span>
                                 <svg
@@ -154,9 +170,14 @@ function Navbar() {
                             <motion.a
                                 key={index}
                                 href={item.href}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    setMobileMenuOpen(false)
+                                    scrollTo(item.href.slice(1))
+                                }}
                                 className="block px-3 py-1 text-base font-medium text-gray-200 hover:text-amber-400 hover:bg-gray-900/50 rounded-md"
                                 whileTap={{ scale: 0.97 }}
-                                onClick={() => setMobileMenuOpen(false)}
+
                             >
                                 {item.name}
                             </motion.a>
@@ -164,7 +185,10 @@ function Navbar() {
                         <motion.button
                             whileTap={{ scale: 0.97 }}
                             className="w-full bg-gradient-to-r from-amber-600 to-amber-500 text-white px-4 py-1 rounded-md font-medium shadow-md flex items-center justify-center space-x-2 my-1"
-                            onClick={() => setMobileMenuOpen(false)}
+                            onClick={() => {
+                                setMobileMenuOpen(false)
+                                scrollTo("contact")
+                            }}
                         >
                             <span>Contact Us</span>
                             <svg

@@ -1,11 +1,12 @@
 import logo from "../../assets/logo_nobg.png";
 
-function Logo() {
+function Logo({ scrollTo }) {
   return (
     <img
       src={logo}
       alt="Logo"
-      className="w-[50px] sm:w-[65px] h-auto"
+      onClick={() => scrollTo("home")}
+      className="w-[50px] sm:w-[65px] h-auto cursor-pointer"
     />
   );
 }

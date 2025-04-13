@@ -7,7 +7,7 @@ function Home() {
     <div id="home">
       <HeroText />
       <MapImages />
-      <IntroVideo />
+      {/* <IntroVideo /> */}
     </div>
   );
 }

@@ -202,30 +202,25 @@ function Footer() {
                         </motion.p>
 
                         <motion.div
-                            className="flex items-center text-sm text-gray-400"
+                            className="flex flex-col sm:flex-row items-center text-sm text-gray-400 text-center sm:text-left"
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             transition={{ duration: 0.5, delay: 0.4 }}
                             viewport={{ once: true }}
                         >
-                            <p>
+                            <p className="flex items-center justify-center">
                                 Designed & Developed with
                                 <motion.span
                                     className="inline-block mx-1 text-red-500"
-                                    animate={{
-                                        scale: [1, 1.2, 1],
-                                    }}
-                                    transition={{
-                                        repeat: Infinity,
-                                        duration: 1.5,
-                                        repeatType: "reverse"
-                                    }}
+                                    animate={{ scale: [1, 1.2, 1] }}
+                                    transition={{ repeat: Infinity, duration: 1.5, repeatType: "reverse" }}
                                 >
                                     <FaHeart />
                                 </motion.span>
                                 by
                             </p>
-                            <div className="flex items-center ml-1">
+
+                            <div className="flex flex-col sm:flex-row items-center sm:ml-2 mt-1 sm:mt-0">
                                 <motion.a
                                     href="https://linkedin.com/in/vicky-kumar1001"
                                     target="_blank"
@@ -237,7 +232,9 @@ function Footer() {
                                     <span className="mr-1">Vicky Kumar</span>
                                     <FaLinkedin />
                                 </motion.a>
-                                <span className="mx-1">/</span>
+
+                                <span className="mx-1 hidden sm:inline">/</span>
+
                                 <motion.a
                                     href="https://github.com/vickykumar1001"
                                     target="_blank"
