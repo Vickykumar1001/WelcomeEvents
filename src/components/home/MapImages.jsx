@@ -5,14 +5,12 @@ import borderL from "../../assets/borderL.png"
 
 function MapImages() {
   return (
-    <div className="absolute w-full flex justify-between transform -translate-y-220px -z-0 overflow-hidden pb-40px">
+    <div className="absolute w-full flex justify-between transform -translate-y-[220px] -z-0 overflow-hidden pb-[40px]">
       <motion.img
         src={borderL}
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         style={{
-          width: "20%",
-          height: "100%",
           transform: "ScaleY(-1)"
         }}
         transition={{
@@ -20,7 +18,7 @@ function MapImages() {
           type: "tween",
           duration: 0.5,
         }}
-        className="object-cover"
+        className="object-cover w-[15%] sm:w-[18%] md:w-[20%] h-auto max-h-screen"
       />
       <motion.img
         src={borderR}
@@ -31,11 +29,7 @@ function MapImages() {
           type: "tween",
           duration: 0.5,
         }}
-        style={{
-          width: "20%",
-          height: "100%",
-        }}
-        className="object-cover"
+        className="object-cover w-[15%] sm:w-[18%] md:w-[20%] h-auto max-h-screen"
       />
     </div>
   );

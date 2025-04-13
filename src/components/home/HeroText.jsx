@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { animationStart, reveal } from "../../utils/animation";
 import TagLineComponent from "./Tagline";
+import scrollTo from "../../utils/scroll";
 
 function HeroText() {
   return (
@@ -110,6 +111,7 @@ function HeroText() {
               {/* Instagram Icon with enhanced hover effect */}
               <motion.a
                 href="https://www.instagram.com/welcome_event_patna"
+                target="_blank"
                 className="text-white hover:text-amber-600 transition-colors duration-300"
                 whileHover={{ scale: 1.2, rotate: 5 }}
                 whileTap={{ scale: 0.9 }}
@@ -126,6 +128,7 @@ function HeroText() {
               {/* YouTube Icon with enhanced hover effect */}
               <motion.a
                 href="https://www.youtube.com/@welcome_events_patna"
+                target="_blank"
                 className="text-white hover:text-amber-600 transition-colors duration-300"
                 whileHover={{ scale: 1.2, rotate: -5 }}
                 whileTap={{ scale: 0.9 }}
@@ -148,6 +151,7 @@ function HeroText() {
             transition={{ delay: animationStart + 1.8, duration: 0.5 }}
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
+            onClick={() => scrollTo("contact")}
           >
             {/* Button background animation */}
             <motion.span

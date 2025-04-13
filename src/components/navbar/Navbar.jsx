@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Logo from "./Logo";
 import { motion } from "framer-motion";
 import { animationStart, reveal } from "../../utils/animation";
-
+import scrollTo from '../../utils/scroll';
 function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -27,14 +27,6 @@ function Navbar() {
         { name: "Gallery", href: "#gallery" },
         // { name: "Testimonials", href: "#testimonials" },
     ];
-    const scrollTo = (sectionName) => {
-        const section = document.getElementById(sectionName);
-        if (section) {
-            setTimeout(() => {
-                section.scrollIntoView({ behavior: "smooth" });
-            }, 100);
-        }
-    };
 
 
     return (
