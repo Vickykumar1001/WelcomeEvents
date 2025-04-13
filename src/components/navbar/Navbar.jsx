@@ -52,7 +52,7 @@ function Navbar() {
                     }`}
             >
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex items-center justify-between h-[70px]">
+                    <div className="flex items-center justify-between">
                         <motion.div
                             variants={reveal}
                             className="flex-shrink-0"
@@ -69,7 +69,7 @@ function Navbar() {
                                     key={index}
                                     href={item.href}
                                     variants={reveal}
-                                    className="text-gray-200 hover:text-amber-400 px-3 py-2 text-md font-medium relative transition-all duration-300"
+                                    className="text-gray-200 hover:text-amber-400 px-3 py-1 text-md font-medium relative transition-all duration-300"
                                     whileHover={{
                                         scale: 1.05,
                                         textShadow: "0 0 8px rgba(245, 158, 11, 0.7)"
@@ -93,7 +93,7 @@ function Navbar() {
                             <motion.button
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.98 }}
-                                className="bg-gradient-to-r from-amber-600 to-amber-500 text-white px-6 py-2 rounded-lg font-medium shadow-lg shadow-amber-600/20 flex items-center space-x-2 hover:shadow-amber-600/40 transition-all duration-300"
+                                className="bg-gradient-to-r from-amber-600 to-amber-500 text-white px-6 py-1 rounded-lg font-medium shadow-lg shadow-amber-600/20 flex items-center space-x-2 hover:shadow-amber-600/40 transition-all duration-300"
                             >
                                 <span>Contact Us</span>
                                 <svg
@@ -149,12 +149,12 @@ function Navbar() {
                     animate={mobileMenuOpen ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }}
                     transition={{ duration: 0.3 }}
                 >
-                    <div className="px-4 py-2 space-y-1 bg-[#1f1a1a] border-t border-amber-900/20 shadow-lg shadow-inner">
+                    <div className="px-4 py-1 space-y-1 bg-[#1f1a1a] border-t border-amber-900/20 shadow-lg shadow-inner">
                         {navItems.map((item, index) => (
                             <motion.a
                                 key={index}
                                 href={item.href}
-                                className="block px-3 py-2 text-base font-medium text-gray-200 hover:text-amber-400 hover:bg-gray-900/50 rounded-md"
+                                className="block px-3 py-1 text-base font-medium text-gray-200 hover:text-amber-400 hover:bg-gray-900/50 rounded-md"
                                 whileTap={{ scale: 0.97 }}
                                 onClick={() => setMobileMenuOpen(false)}
                             >
@@ -163,7 +163,7 @@ function Navbar() {
                         ))}
                         <motion.button
                             whileTap={{ scale: 0.97 }}
-                            className="w-full bg-gradient-to-r from-amber-600 to-amber-500 text-white px-4 py-2 rounded-md font-medium shadow-md flex items-center justify-center space-x-2 my-2"
+                            className="w-full bg-gradient-to-r from-amber-600 to-amber-500 text-white px-4 py-1 rounded-md font-medium shadow-md flex items-center justify-center space-x-2 my-1"
                             onClick={() => setMobileMenuOpen(false)}
                         >
                             <span>Contact Us</span>

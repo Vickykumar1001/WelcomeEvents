@@ -3,9 +3,6 @@ import { animationStart, reveal } from "../../utils/animation";
 import TagLineComponent from "./Tagline";
 
 function HeroText() {
-  // Text animation for word-by-word reveal
-  const titleWords = ["Transforming", "occasions", "into", "extraordinary", "experiences", "in", "Patna, Bihar"];
-
   return (
     <motion.div
       layout
@@ -32,16 +29,16 @@ function HeroText() {
         }}
       />
 
-      {/* Company name with enhanced styling */}
+      {/* Company name with enhanced styling - IMPROVED for mobile */}
       <motion.div
         variants={reveal}
         initial="hiddenVariant"
         animate="revealedVariant"
         transition={{ delay: animationStart + 1, duration: 0.5 }}
-        className="flex flex-col text-4vw md:text-5vw lg:text-6vw font-bold mb-6 md:mb-8 pt-20 md:pt-28 text-yellow-400 drop-shadow-xl italic relative"
+        className="flex flex-col text-7vw sm:text-6vw md:text-5vw lg:text-6vw font-bold mb-6 md:mb-8 pt-20 md:pt-28 text-yellow-400 drop-shadow-xl italic relative"
       >
         <motion.span
-          className="flex items-center parisienne-regular"
+          className="flex justify-center items-center parisienne-regular"
           whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 300 }}
         >
@@ -57,32 +54,22 @@ function HeroText() {
         />
       </motion.div>
 
-      {/* Tagline with word-by-word animation */}
+      {/* Tagline - FIXED to appear as one coherent sentence with better mobile sizing */}
       <motion.div
         variants={reveal}
         initial="hiddenVariant"
         animate="revealedVariant"
         transition={{ delay: animationStart + 1, duration: 0.5 }}
-        className="flex flex-col text-2.2vw md:text-2.2vw font-medium text-white"
+        className="px-4 sm:px-6 md:px-8"
       >
-        <motion.div className="flex flex-wrap justify-center items-center gap-2 px-4">
-          {titleWords.map((word, index) => (
-            <motion.span
-              key={index}
-              className="inline-block"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                delay: animationStart + 1 + (index * 0.1),
-                duration: 0.5,
-                ease: "easeOut"
-              }}
-            >
-              {word}
-              {index < titleWords.length - 1 && "\u00A0"}
-            </motion.span>
-          ))}
-        </motion.div>
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: animationStart + 1.2, duration: 0.7 }}
+          className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium text-white leading-tight max-w-3xl mx-auto"
+        >
+          Transforming occasions into extraordinary experiences in Patna, Bihar
+        </motion.h2>
       </motion.div>
 
       {/* Content section with improved spacing and responsiveness */}
@@ -90,8 +77,8 @@ function HeroText() {
         variants={reveal}
         initial="hiddenVariant"
         animate="revealedVariant"
-        transition={{ delay: animationStart + 1.2, duration: 0.5 }}
-        className="w-full max-w-3xl px-4 md:px-8 mx-auto text-base md:text-lg font-normal leading-relaxed pt-6 md:pt-10 mb-20 md:mb-32"
+        transition={{ delay: animationStart + 1.4, duration: 0.5 }}
+        className="w-full max-w-3xl px-4 md:px-8 mx-auto text-base md:text-lg font-normal leading-relaxed pt-8 md:pt-10 mb-20 md:mb-32"
       >
         <TagLineComponent />
 
@@ -128,7 +115,7 @@ function HeroText() {
                 whileTap={{ scale: 0.9 }}
               >
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  className="w-6 h-6 md:w-7 md:h-7"
+                  className="w-7 h-7 md:w-8 md:h-8"
                   strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
@@ -144,7 +131,7 @@ function HeroText() {
                 whileTap={{ scale: 0.9 }}
               >
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  className="w-6 h-6 md:w-7 md:h-7"
+                  className="w-7 h-7 md:w-8 md:h-8"
                   strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
                   <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
@@ -153,9 +140,9 @@ function HeroText() {
             </div>
           </motion.div>
 
-          {/* Button with improved hover animation */}
+          {/* Button with improved hover animation and better mobile visibility */}
           <motion.button
-            className="bg-white/10 backdrop-blur-sm border border-white/50 text-white px-8 py-3 rounded-lg font-medium flex items-center gap-2 mx-auto transition-all overflow-hidden relative group"
+            className="bg-white/10 backdrop-blur-sm border border-white/50 text-white px-8 py-4 rounded-lg font-medium flex items-center gap-2 mx-auto transition-all overflow-hidden relative group"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: animationStart + 1.8, duration: 0.5 }}
@@ -168,11 +155,11 @@ function HeroText() {
             />
 
             {/* Button text content */}
-            <span className="relative z-10">Get In Touch</span>
+            <span className="relative z-10 text-base sm:text-lg">Get In Touch</span>
 
             {/* Arrow with animation */}
             <motion.svg
-              width="18" height="18"
+              width="20" height="20"
               viewBox="0 0 18 18"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"

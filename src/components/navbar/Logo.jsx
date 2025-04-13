@@ -1,14 +1,12 @@
-import logo from "../../assets/logo.png"
+import logo from "../../assets/logo_nobg.png";
+
 function Logo() {
   return (
-    <>
-
-      <img
-        src={logo}
-        alt="Logo"
-        style={{ width: '65px', height: '65px' }}
-      />
-    </>
+    <img
+      src={logo}
+      alt="Logo"
+      className="w-[50px] sm:w-[65px] h-auto"
+    />
   );
 }
 
