@@ -1,7 +1,16 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { animationStart, reveal } from "../../utils/animation";
-import firecracker from "../../assets/images/firecracker.png"
+import lighting from "../../assets/images/lighting.png"
+import firecracker from "../../assets/images/firecracker.jpeg"
+import sound from "../../assets/images/sound.jpeg"
+import truss from "../../assets/images/truss.jpeg"
+import entry from "../../assets/images/entry.jpg"
+import fog from "../../assets/images/fog.jpeg"
+import efire from "../../assets/images/efirework.jpeg"
+import confetti from "../../assets/images/confetti.png"
+import varmala from "../../assets/images/varmala.png"
+import scrollTo from '../../utils/scroll';
 function ServicesSection() {
     const [hoveredService, setHoveredService] = useState(null);
 
@@ -32,10 +41,34 @@ function ServicesSection() {
     // Services data - all services directly shown
     const services = [
         {
+            id: "fireworks",
+            title: "Fireworks & Special Effects",
+            description: "Make a statement with our spectacular pyrotechnics and special effects. From indoor cold spark fountains to grand outdoor displays, our fireworks create unforgettable moments.",
+            image: firecracker,
+            icon: (
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 2L9 7l-7 0 5 5-2 7 7-4 7 4-2-7 5-5-7 0z"></path>
+                </svg>
+            ),
+        },
+        {
+            id: "varmala",
+            title: "Varmala Concepts",
+            description: "Elevate your Jaimala/Varmala ceremony with innovative presentation concepts. From floating platforms to beautiful mechanical rigs, we create magical moments for this sacred exchange.",
+            image: varmala,
+            icon: (
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 22V10"></path>
+                    <path d="M15.4 14a3 3 0 1 0-6 0l3 8 3-8Z"></path>
+                    <path d="M19 3v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V3"></path>
+                </svg>
+            ),
+        },
+        {
             id: "lighting",
             title: "Lighting Design",
             description: "From ambient mood lighting to dynamic dance floor effects, our lighting transforms venues into magical spaces. We use state-of-the-art LED systems, architectural lighting, and custom gobos to create the perfect atmosphere for your event.",
-            image: firecracker,
+            image: lighting,
             icon: (
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <circle cx="12" cy="12" r="5"></circle>
@@ -50,11 +83,12 @@ function ServicesSection() {
                 </svg>
             ),
         },
+
         {
             id: "sound",
             title: "Sound Engineering",
             description: "Crystal-clear sound for ceremonies, speeches, and celebrations. Our professional-grade audio equipment ensures every word and beat is heard with perfect clarity, regardless of venue size.",
-            image: firecracker,
+            image: sound,
             icon: (
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M2 18L2 6"></path>
@@ -65,11 +99,25 @@ function ServicesSection() {
                 </svg>
             ),
         },
+
+        {
+            id: "entry",
+            title: "Bride & Groom Entry Concepts",
+            description: "Make a grand entrance with our custom-designed entry concepts. Whether it's a dramatic reveal, an aerial descent, or a fog-filled pathway, we create magical moments that captivate your guests.",
+            image: entry,
+            icon: (
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M18 4v16M6 4v16"></path>
+                    <path d="M12 4v2M12 10v2M12 18v2"></path>
+                    <path d="M4 12h4M16 12h4"></path>
+                </svg>
+            ),
+        },
         {
             id: "truss",
             title: "Truss & Staging",
             description: "Custom-designed stages and structural elements that serve as the perfect foundation for your event. Our sturdy, versatile truss systems can accommodate any design requirement.",
-            image: firecracker,
+            image: truss,
             icon: (
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M3 3v18h18"></path>
@@ -80,35 +128,12 @@ function ServicesSection() {
                 </svg>
             ),
         },
-        {
-            id: "fireworks",
-            title: "Fireworks & Special Effects",
-            description: "Make a statement with our spectacular pyrotechnics and special effects. From indoor cold spark fountains to grand outdoor displays, our fireworks create unforgettable moments.",
-            image: firecracker,
-            icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 2L9 7l-7 0 5 5-2 7 7-4 7 4-2-7 5-5-7 0z"></path>
-                </svg>
-            ),
-        },
-        {
-            id: "entry",
-            title: "Bride & Groom Entry Concepts",
-            description: "Make a grand entrance with our custom-designed entry concepts. Whether it's a dramatic reveal, an aerial descent, or a fog-filled pathway, we create magical moments that captivate your guests.",
-            image: firecracker,
-            icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M18 4v16M6 4v16"></path>
-                    <path d="M12 4v2M12 10v2M12 18v2"></path>
-                    <path d="M4 12h4M16 12h4"></path>
-                </svg>
-            ),
-        },
+
         {
             id: "fog",
             title: "CO2 & Ground Fog Effects",
             description: "Create mystical atmospheres with our ground fog systems or add excitement with CO2 jet blasts. Perfect for first dances, entries, or creating dreamy photo opportunities.",
-            image: firecracker,
+            image: fog,
             icon: (
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M3 19h18"></path>
@@ -122,7 +147,7 @@ function ServicesSection() {
             id: "electronic",
             title: "Electronic Fireworks",
             description: "Safe indoor pyrotechnics that bring the wow factor to any venue. Our electronic fireworks provide the visual impact of traditional fireworks without the safety concerns or venue restrictions.",
-            image: firecracker,
+            image: efire,
             icon: (
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M6 9v5"></path>
@@ -137,7 +162,7 @@ function ServicesSection() {
             id: "confetti",
             title: "Confetti Blowers",
             description: "Celebrate key moments with spectacular confetti effects. Our high-powered blowers can fill the space with color for announcements, first dances, or grand finales.",
-            image: firecracker,
+            image: confetti,
             icon: (
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M4 5v14a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1z"></path>
@@ -150,19 +175,7 @@ function ServicesSection() {
                 </svg>
             ),
         },
-        {
-            id: "varmala",
-            title: "Varmala Concepts",
-            description: "Elevate your Jaimala/Varmala ceremony with innovative presentation concepts. From floating platforms to beautiful mechanical rigs, we create magical moments for this sacred exchange.",
-            image: firecracker,
-            icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 22V10"></path>
-                    <path d="M15.4 14a3 3 0 1 0-6 0l3 8 3-8Z"></path>
-                    <path d="M19 3v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V3"></path>
-                </svg>
-            ),
-        },
+
     ];
 
     return (
@@ -296,6 +309,9 @@ function ServicesSection() {
                     >
                         <p className="text-xl text-gray-300 italic mb-4">And much more...</p>
                         <motion.div
+                            onClick={() => {
+                                scrollTo("contact")
+                            }}
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.98 }}
                         >

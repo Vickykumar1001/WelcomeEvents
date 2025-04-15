@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { animationStart, reveal } from "../../utils/animation";
-import firecracker from '../../assets/images/firecracker.png';
+import firecracker from '../../assets/images/firecracker.jpeg';
 import wedding from '../../assets/images/wedding.png';
-import lighting from '../../assets/images/lighting.png';
+import lighting from '../../assets/images/lighting.jpeg';
 function AboutUs() {
   // For staggered animations
   const container = {
@@ -181,7 +181,7 @@ function AboutUs() {
 
           {/* Team and values section */}
           <motion.div
-            className="mt-24 lg:mt-40"
+            className="mt-20 lg:mt-25"
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: "-100px" }}

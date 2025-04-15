@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { animationStart, reveal } from "../../utils/animation";
-import firecracker from '../../assets/images/firecracker.png';
+import firecracker from '../../assets/images/firecracker.jpeg';
 import wedding from '../../assets/images/wedding.png';
 import lighting from '../../assets/images/lighting.png';
 function GallerySection() {
@@ -81,25 +81,32 @@ function GallerySection() {
         },
     ];
 
-    // Sample image data - replace with your actual image paths
-    // For a real implementation, consider using multiple image sizes for responsive loading
+
     const images = [
-        { id: "1", src: lighting, alt: "Wedding stage lighting" },
-        { id: "2", src: firecracker, alt: "Corporate event setup" },
-        { id: "3", src: wedding, alt: "Special effects display" },
-        { id: "4", src: wedding, alt: "Bride entry concept" },
-        { id: "5", src: wedding, alt: "Wedding lighting" },
-        { id: "6", src: wedding, alt: "CO2 and fog effects" },
-        { id: "7", src: wedding, alt: "Stage design" },
-        // { id: "8", src: "src/assets/images/gallery-8.jpg", alt: "Confetti moment" },
-        // { id: "9", src: "src/assets/images/gallery-9.jpg", alt: "Electronic fireworks" },
-        // { id: "10", src: "src/assets/images/gallery-10.jpg", alt: "Sound setup" },
-        // { id: "11", src: "src/assets/images/gallery-11.jpg", alt: "Lighting effects" },
-        // { id: "12", src: "src/assets/images/gallery-12.jpg", alt: "Varmala ceremony" },
-        // { id: "13", src: "src/assets/images/gallery-13.jpg", alt: "Wedding decor" },
-        // { id: "14", src: "src/assets/images/gallery-14.jpg", alt: "Dance floor lighting" },
-        // { id: "15", src: "src/assets/images/gallery-15.jpg", alt: "Grand entry effect" },
+        { id: "1", src: "https://res.cloudinary.com/dlpdm7vye/image/upload/v1744740071/welcome-event/2_tkvkei.jpg", alt: "img" },
+        { id: "2", src: "https://res.cloudinary.com/dlpdm7vye/image/upload/v1744740072/welcome-event/5_wla5rr.jpg", alt: "img" },
+        { id: "3", src: "https://res.cloudinary.com/dlpdm7vye/image/upload/v1744740073/welcome-event/1_odzucc.jpg", alt: "img" },
+        { id: "4", src: "https://res.cloudinary.com/dlpdm7vye/image/upload/v1744740073/welcome-event/4_t4busr.jpg", alt: "img" },
+        { id: "8", src: "https://res.cloudinary.com/dlpdm7vye/image/upload/v1744740073/welcome-event/7_zpnz8s.jpg", alt: "img" },
+        { id: "9", src: "https://res.cloudinary.com/dlpdm7vye/image/upload/v1744740076/welcome-event/6_pcrf1j.jpg", alt: "img" },
+        { id: "10", src: "https://res.cloudinary.com/dlpdm7vye/image/upload/v1744740083/welcome-event/17_eycjbg.jpg", alt: "img" },
+        { id: "11", src: "https://res.cloudinary.com/dlpdm7vye/image/upload/v1744740078/welcome-event/12_xjczrk.jpg", alt: "img" },
+        { id: "12", src: "https://res.cloudinary.com/dlpdm7vye/image/upload/v1744740078/welcome-event/10_twpefa.jpg", alt: "img" },
+        { id: "13", src: "https://res.cloudinary.com/dlpdm7vye/image/upload/v1744740079/welcome-event/13_a7oamv.jpg", alt: "img" },
+        { id: "14", src: "https://res.cloudinary.com/dlpdm7vye/image/upload/v1744740079/welcome-event/14_byugtc.jpg", alt: "img" },
+        { id: "15", src: "https://res.cloudinary.com/dlpdm7vye/image/upload/v1744740080/welcome-event/9_cmseyi.jpg", alt: "img" },
+        { id: "16", src: "https://res.cloudinary.com/dlpdm7vye/image/upload/v1744740081/welcome-event/8_s81d5p.jpg", alt: "img" },
+        { id: "17", src: "https://res.cloudinary.com/dlpdm7vye/image/upload/v1744740082/welcome-event/3_tug1ij.jpg", alt: "img" },
+        { id: "18", src: "https://res.cloudinary.com/dlpdm7vye/image/upload/v1744740083/welcome-event/15_yofdi3.jpg", alt: "img" },
+        { id: "19", src: "https://res.cloudinary.com/dlpdm7vye/image/upload/v1744740084/welcome-event/20_nkekxt.jpg", alt: "img" },
+        { id: "20", src: "https://res.cloudinary.com/dlpdm7vye/image/upload/v1744740084/welcome-event/19_hjxgde.jpg", alt: "img" },
+        { id: "21", src: "https://res.cloudinary.com/dlpdm7vye/image/upload/v1744740085/welcome-event/24_owndxf.jpg", alt: "img" },
+        { id: "22", src: "https://res.cloudinary.com/dlpdm7vye/image/upload/v1744740085/welcome-event/23_kweq20.jpg", alt: "img" },
+        { id: "23", src: "https://res.cloudinary.com/dlpdm7vye/image/upload/v1744740086/welcome-event/18_rqxukp.jpg", alt: "img" },
+        { id: "24", src: "https://res.cloudinary.com/dlpdm7vye/image/upload/v1744740092/welcome-event/22_vfbqqc.jpg", alt: "img" },
+        { id: "25", src: "https://res.cloudinary.com/dlpdm7vye/image/upload/v1744740095/welcome-event/25_fchueq.jpg", alt: "img" },
     ];
+
 
     // Create array of columns for masonry layout
     const getColumnsData = () => {
@@ -378,12 +385,13 @@ function GallerySection() {
                                             custom={(columnIndex + 1) * (imageIndex + 1)}
                                             onClick={() => setSelectedImage(image)}
                                         >
-                                            <div className="relative overflow-hidden group">
+                                            <div className="relative overflow-hidden group h-64">
                                                 <img
                                                     src={image.src}
                                                     alt={image.alt}
-                                                    className="w-full h-auto rounded-lg transition-transform duration-700 group-hover:scale-110"
+                                                    className="w-full h-full rounded-lg transition-transform duration-700 group-hover:scale-110 object-cover"
                                                 />
+
                                                 <motion.div
                                                     className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                                                     whileHover={{ opacity: 1 }}
@@ -408,7 +416,6 @@ function GallerySection() {
                             ))}
                         </motion.div>
                     )}
-
                     {/* Load more button */}
                     <motion.div
                         className="mt-16 text-center"
@@ -417,13 +424,16 @@ function GallerySection() {
                         transition={{ duration: 0.8, delay: 0.5 }}
                         viewport={{ once: true }}
                     >
-                        <motion.button
-                            className="bg-gray-800 hover:bg-gray-700 text-white px-8 py-3 rounded-full font-medium transition-all duration-300"
+                        <motion.a
+                            href="https://www.instagram.com/welcome_event_patna"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block bg-gray-800 hover:bg-gray-700 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 text-center"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.98 }}
                         >
-                            Load More
-                        </motion.button>
+                            See More
+                        </motion.a>
                     </motion.div>
 
                     {/* Image Modal */}

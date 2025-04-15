@@ -46,11 +46,15 @@ function ContactUs() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Handle form submission logic here
-        console.log("Form submitted:", formData);
-        // Reset form
-        setFormData({ name: "", phone: "", email: "", message: "" });
-        alert("Thank you for your message! We'll get back to you soon.");
+        const form = e.target;
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(new FormData(form)).toString(),
+        }).then(() => {
+            setFormData({ name: "", phone: "", email: "", message: "" });
+            alert("Thank you for your message! We'll get back to you soon.");
+        }).catch((error) => alert(error));
     };
 
     return (
@@ -148,8 +152,8 @@ function ContactUs() {
                                         </div>
                                         <div>
                                             <h4 className="text-white font-medium mb-2">Call Us</h4>
-                                            <a href="tel:+91 7903108839"><p className="text-gray-300">+91 7903108839</p></a>
-                                            <a href="tel:+91 9102943258"><p className="text-gray-300">+91 9102943258</p></a>
+                                            <a href="tel:+917903108839"><p className="text-gray-300">+91 7903108839</p></a>
+                                            <a href="tel:+919264184997"><p className="text-gray-300">+91 9264184997</p></a>
                                         </div>
                                     </motion.div>
 
@@ -164,7 +168,7 @@ function ContactUs() {
                                         </div>
                                         <div>
                                             <h4 className="text-white font-medium mb-2">Email Us</h4>
-                                            <p className="text-gray-300">welcomeevent@gmail.com</p>
+                                            <a href="mailto:welcomeevent@gmail.com"><p className="text-gray-300">welcomeevent@gmail.com</p></a>
                                         </div>
                                     </motion.div>
 
@@ -190,6 +194,7 @@ function ContactUs() {
                                             <motion.a
                                                 href="https://wa.me/917903108839"
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 className="bg-gray-800 p-3 rounded-full"
                                                 whileHover={{ y: -5, backgroundColor: "#25D366", scale: 1.1 }}
                                                 transition={{ duration: 0.2 }}
