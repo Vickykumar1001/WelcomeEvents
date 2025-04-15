@@ -47,14 +47,20 @@ function ContactUs() {
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = e.target;
+
         fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: new URLSearchParams(new FormData(form)).toString(),
-        }).then(() => {
-            setFormData({ name: "", phone: "", email: "", message: "" });
-            alert("Thank you for your message! We'll get back to you soon.");
-        }).catch((error) => alert(error));
+        })
+            .then(() => {
+                setFormData({ name: "", phone: "", email: "", message: "" });
+                alert("Thank you for your message! We'll get back to you soon.");
+            })
+            .catch((error) => {
+                console.error("Form submission error:", error);
+                alert("Oops! There was a problem submitting your form. Please try again.");
+            });
     };
 
     return (
@@ -226,13 +232,24 @@ function ContactUs() {
                         </motion.div>
 
                         {/* Right column: Contact Form */}
+                        {/* Right column: Contact Form */}
                         <motion.div className="w-full lg:w-3/5" variants={item}>
                             <motion.form
+                                name="contact"
+                                method="POST"
+                                data-netlify="true"
+                                data-netlify-honeypot="bot-field"
                                 onSubmit={handleSubmit}
                                 className="bg-gray-900 p-8 rounded-2xl border border-gray-800"
                                 whileHover={{ boxShadow: "0 0 20px rgba(217, 119, 6, 0.2)" }}
                                 transition={{ duration: 0.3 }}
                             >
+                                {/* Netlify form detection fields */}
+                                <input type="hidden" name="form-name" value="contact" />
+                                <div hidden>
+                                    <input name="bot-field" />
+                                </div>
+
                                 <h3 className="text-2xl font-bold text-white mb-8">Send Us a Message</h3>
 
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
