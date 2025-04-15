@@ -75,7 +75,7 @@ function ContactUs() {
             >
                 {/* Background accents */}
                 <motion.div
-                    className="absolute -left-1/4 top-1/4 w-96 h-96 rounded-full bg-amber-600 opacity-10 blur-3xl"
+                    className="absolute -left-1/4 top-1/4 w-96 h-96 rounded-full bg-amber-600 opacity-10 blur-3xl pointer-events-none"
                     animate={{
                         x: mousePosition.x * 2,
                         y: mousePosition.y * 2
@@ -84,7 +84,7 @@ function ContactUs() {
                 />
 
                 <motion.div
-                    className="absolute -right-1/4 bottom-1/4 w-80 h-80 rounded-full bg-amber-500 opacity-10 blur-3xl"
+                    className="absolute -right-1/4 bottom-1/4 w-80 h-80 rounded-full bg-amber-500 opacity-10 blur-3xl pointer-events-none"
                     animate={{
                         x: mousePosition.x * -2,
                         y: mousePosition.y * -2

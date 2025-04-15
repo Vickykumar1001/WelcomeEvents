@@ -66,7 +66,9 @@ function Footer() {
                                 </p>
                                 <div className="flex space-x-4 mt-6">
                                     <motion.a
-                                        href="#"
+                                        href="https://wa.me/917903108839"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         className="bg-gray-800 p-2 rounded-full text-gray-300 hover:text-white"
                                         whileHover={{ y: -5, backgroundColor: "#25D366", scale: 1.1 }}
                                         transition={{ duration: 0.2 }}
@@ -75,7 +77,8 @@ function Footer() {
                                         <FaWhatsapp className="text-lg" />
                                     </motion.a>
                                     <motion.a
-                                        href="#"
+                                        href="https://www.instagram.com/welcome_event_patna"
+                                        target="_blank"
                                         className="bg-gray-800 p-2 rounded-full text-gray-300 hover:text-white"
                                         whileHover={{ y: -5, backgroundColor: "#E1306C", scale: 1.1 }}
                                         transition={{ duration: 0.2 }}
@@ -84,7 +87,8 @@ function Footer() {
                                         <FaInstagram className="text-lg" />
                                     </motion.a>
                                     <motion.a
-                                        href="#"
+                                        href="https://www.youtube.com/@welcome_events_patna"
+                                        target="_blank"
                                         className="bg-gray-800 p-2 rounded-full text-gray-300 hover:text-white"
                                         whileHover={{ y: -5, backgroundColor: "#FF0000", scale: 1.1 }}
                                         transition={{ duration: 0.2 }}
@@ -100,7 +104,7 @@ function Footer() {
                         <motion.div variants={item} className="space-y-4">
                             <h3 className="text-white text-xl font-semibold mb-6">Quick Links</h3>
                             <ul className="space-y-3">
-                                {['Home', 'About Us', 'Services', 'Gallery', 'Contact'].map((link, index) => (
+                                {['Home', 'About', 'Services', 'Gallery', 'Contact'].map((link, index) => (
                                     <motion.li key={index}
                                         whileHover={{ x: 5 }}
                                         transition={{ duration: 0.2 }}
@@ -155,8 +159,8 @@ function Footer() {
                             >
                                 <FaPhone className="text-amber-500 mt-1" />
                                 <div>
-                                    <p className="text-gray-400">+91 9876543210</p>
-                                    <p className="text-gray-400">+91 8765432109</p>
+                                    <a href="tel:+917903108839"><p className="text-gray-400">+91 7903108839</p></a>
+                                    <a href="tel:+919264184997"><p className="text-gray-400">+91 9264184997</p></a>
                                 </div>
                             </motion.div>
 
@@ -166,7 +170,7 @@ function Footer() {
                                 transition={{ duration: 0.2 }}
                             >
                                 <FaEnvelope className="text-amber-500 mt-1" />
-                                <p className="text-gray-400">info@welcomeevent.com</p>
+                                <a href="mailto:welcomeevent@gmail.com"><p className="text-gray-300">welcomeevent@gmail.com</p></a>
                             </motion.div>
 
                             <motion.div
